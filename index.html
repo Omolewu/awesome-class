@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to Js</title>
+</head>
+
+<body>
+    <form name="form">
+        <select name="sex">
+           <option value="none">Select Your Sex</option>
+           <option value="Female">Female</option>
+           <option value="Male">Male</option>
+        </select>
+        <input type="text" name="cal" value="56" id="input">
+        <p id="error"></p>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        form.sex.addEventListener('change', () => {
+            console.log(form.sex.value);
+        })
+
+        // console.log(new Date().getYear())
+        /* form.addEventListener('submit', (e) => {
+                 e.preventDefault();
+                 x = form.cal.value;
+                 console.log(x)
+             })*/
+        form.cal.addEventListener('keydown', () => {
+            x = form.cal.value;
+            if (x.length < 5) {
+                document.getElementById('error').innerHTML = "minimum of 5 characters required";
+            } else {
+                document.getElementById('error').innerHTML = x;
+            }
+        })
+    </script>
+</body>
+
+</html>
